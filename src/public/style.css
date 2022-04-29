@@ -1,0 +1,384 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+}
+
+.sideMenu {
+    width: 300px;
+    height: 100%;
+    background: rgb(243, 243, 243);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.sideMenuContent {
+    width: 100%;
+    padding: 100px 25px 0px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.sideMenuContent li {
+    color: #000;
+    width: 100%;
+    padding: 15px 21px;
+    font-size: 18px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.sideMenuContent li:hover {
+    background: #0001;
+    border-radius: 10px;
+}
+
+.sideMenu img {
+    width: 18px;
+}
+
+.profile {
+    border-top: 1px solid rgb(190, 190, 190);
+    padding: 25px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.profileName {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.profileButton {
+    font-size: 13px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
+
+.profileButton img {
+    margin-left: 6px;
+    width: 20px;
+}
+
+.asdf {
+    width: 100%;
+}
+
+header {
+    border-bottom: 1px solid rgb(226, 226, 226);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 70px;
+    padding: 5px 200px 5px 50px;
+    box-sizing: border-box;
+}
+
+header h2 {
+    font-size: 28px;
+}
+
+.Content {
+    padding: 3px 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    position: relative;
+    margin-right: 40px;
+}
+
+.search span {
+    color: rgb(41, 41, 41);
+    font-size: 13px;
+    margin-right: 15px;
+}
+
+.search span img {
+    width: 20px;
+    margin-left: 6px;
+}
+
+.searchInput {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(224, 224, 224);
+}
+
+.searchList {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0px;
+    top: -20px;
+    z-index: 5;
+}
+
+.searchResultList {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid rgb(224, 224, 224);
+    background: #fff;
+}
+
+.searchResultList div {
+    padding: 10px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.searchResultList div:hover {
+    background: #0001;
+}
+
+.searchResultList div strong {
+    font-weight: 700;
+}
+
+.searchBtn {
+    position: absolute;
+    right: 10px;
+    top: -8px;
+    z-index: 12;
+}
+
+.searchBtn img {
+    width: 15px;
+    filter: contrast(0.3);
+}
+
+.searchLoading {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    right: 11px;
+    width: 14px;
+    height: 14px;
+    z-index: 12;
+    border-radius: 50%;
+    border: 1px solid rgb(211, 211, 211);
+    border-top-color: #000;
+    animation: spinner .8s linear infinite;
+}
+
+@keyframes spinner {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+}
+
+.headerBtn {
+    min-width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.headerBtn:hover {
+    background: #0001;
+}
+
+.headerBtn img {
+    width: 24px;
+}
+
+.headerBtnLogin {
+    gap: 5px;
+}
+
+.headerBtnLogin span {
+    font-size: 13px;
+    color: #000d;
+}
+
+main {
+    padding: 45px;
+}
+
+.cards {
+    width: calc(100vw - 450px);
+    height: 350px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 30px;
+    overflow-x: hidden;
+}
+
+.card {
+    background: #333;
+    width: calc(350px / 9 * 16);
+    height: 100%;
+    border-radius: 16px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.card .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+}
+
+.cardInner {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.cardInner h4 {
+    z-index: 3;
+    font-size: 28px;
+    padding: 4px;
+    color: #fff;
+    background: #000;
+    width: fit-content;
+    position: inherit;
+}
+
+.cardInner div {
+    z-index: 3;
+    position: inherit;
+    width: fit-content;
+    margin-top: 6px;
+    padding: 4px;
+    font-size: 12px;
+    color: #fff;
+    background: #000;
+}
+
+.CardInfo {
+    display: flex;
+    gap: 8px;
+}
+
+.CardInfo img {
+    height: 15px;
+}
+
+.CardInfo svg {
+    height: 13px;
+}
+
+.CardInfo svg path {
+    fill: #fff;
+}
+
+.CardInfo span {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.rooms {
+    height: 100%;
+    margin-right: 200px;
+}
+
+.roomList {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 10px;
+    list-style: none;
+}
+
+.room {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 12px 15px;
+    border: 1px solid #0000;
+}
+
+.room:hover {
+    background-color: #00000008;
+    border: 1px solid #0004;
+}
+
+.room span {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.roomTitle {
+    font-size: 22px;
+}
+
+.roomOwner {
+    font-size: 13px;
+    color: #555;
+}
+
+.room img {
+    width: 20px;
+}
+
+.exitBtn {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px 7px;
+    border-radius: 8px;
+    gap: 5px;
+    font-size: 13px;
+    margin-bottom: 100px;
+    color: #000b;
+    border: 1px solid #bbb;
+}
+
+.exitBtn:hover {
+    background: #ff2c2c;
+    color: #fff;
+    border: 1px solid #ffff;
+}
+
+.exitBtn:hover .exitBtnIcon path {
+    fill: #fff !important;
+}
+
+.exitBtnIcon {
+    width: 15px;
+}
+
+.exitBtnIcon path {
+    fill: #000b;
+}

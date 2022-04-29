@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/style.css">
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="/public/app.js"></script>
+</head>
+<body>
+    <!-- <form>
+        <input placeholder="room name" required type="text">
+        <button>Create Room</button>
+    </form> -->
+    <div class="sideMenu">
+        <ul class="sideMenuContent">
+            <li>인기룸<img src="/public/fire.svg"></li>
+            <li>마이룸<img src="/public/house.svg"></li>
+            <li>캐릭터<img src="/public/user.svg"></li>
+            <li>스토어<img src="/public/shopping-bag.svg"></li>
+        </ul>
+        <div class="profile">
+            <div class="profileName">라비</div>
+            <div class="profileButton">1234<img src="/public/button.svg"></div>
+        </div>
+    </div>
+    <div class="asdf">
+        <header>
+            <h2>
+                METAROOM
+            </h2>
+            <div class="search">
+                <!-- <span class="searchContent">참가하기!<img src="/public/Right Index.png"></span> -->
+                <!-- <input class="searchInput" placeholder="초대코드"> -->
+                <div class="searchList">
+                    <input class="searchInput" placeholder="로그인하세요" disabled>
+                    <div class="searchResultList" style="display: none;">
+                    </div>
+                </div>
+                <a class="searchBtn">
+                    <img class="searchIcon" src="/public/search.svg">
+                </a>
+                <div class="searchLoading" style="display: none;"></div>
+            </div>
+            <a class="headerBtn headerBtnLogin">
+                <img src="/public/user2.svg">
+                <span class="loginUserName">로그인하세요</span>
+            </a>
+            <a class="headerBtn"><img src="/public/setting.svg"></a>
+        </header>
+        <main>
+            <div class="cards">
+                <div class="card">
+                    <img class="bg" src="/public/room1.jpg">
+                    <div class="cardInner">
+                        <h4>라비 님의 룸</h4>
+                        <div class="CardInfo">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path fill="#000" d="M6.568 27.002c-.49 0-.98-.127-1.429-.383a2.857 2.857 0 0 1-1.461-2.512V4.892c0-1.053.546-1.992 1.461-2.512.914-.521 2-.51 2.905.029l16.142 9.608c.883.526 1.411 1.454 1.411 2.483s-.528 1.957-1.411 2.483L8.045 26.591a2.884 2.884 0 0 1-1.477.411zM6.572 4a.922.922 0 0 0-.445.119.873.873 0 0 0-.45.773v19.216c0 .467.314.696.45.773a.873.873 0 0 0 .895-.009l16.141-9.608c.392-.233.435-.612.435-.764s-.042-.531-.435-.764L7.021 4.128A.858.858 0 0 0 6.572 4z"/></svg>12343</span>
+                            <span><img src="/public/heart.svg">1234</span>
+                            <span><img src="/public/comment.svg">345</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="bg" src="/public/room2.jpg">
+                    <div class="cardInner">
+                        <h4>라비 님의 룸</h4>
+                        <div class="CardInfo">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path fill="#000" d="M6.568 27.002c-.49 0-.98-.127-1.429-.383a2.857 2.857 0 0 1-1.461-2.512V4.892c0-1.053.546-1.992 1.461-2.512.914-.521 2-.51 2.905.029l16.142 9.608c.883.526 1.411 1.454 1.411 2.483s-.528 1.957-1.411 2.483L8.045 26.591a2.884 2.884 0 0 1-1.477.411zM6.572 4a.922.922 0 0 0-.445.119.873.873 0 0 0-.45.773v19.216c0 .467.314.696.45.773a.873.873 0 0 0 .895-.009l16.141-9.608c.392-.233.435-.612.435-.764s-.042-.531-.435-.764L7.021 4.128A.858.858 0 0 0 6.572 4z"/></svg>12343</span>
+                            <span><img src="/public/heart.svg">1234</span>
+                            <span><img src="/public/comment.svg">345</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="bg" src="/public/room1.jpg">
+                    <div class="cardInner">
+                        <h4>라비 님의 룸</h4>
+                        <div class="CardInfo">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path fill="#000" d="M6.568 27.002c-.49 0-.98-.127-1.429-.383a2.857 2.857 0 0 1-1.461-2.512V4.892c0-1.053.546-1.992 1.461-2.512.914-.521 2-.51 2.905.029l16.142 9.608c.883.526 1.411 1.454 1.411 2.483s-.528 1.957-1.411 2.483L8.045 26.591a2.884 2.884 0 0 1-1.477.411zM6.572 4a.922.922 0 0 0-.445.119.873.873 0 0 0-.45.773v19.216c0 .467.314.696.45.773a.873.873 0 0 0 .895-.009l16.141-9.608c.392-.233.435-.612.435-.764s-.042-.531-.435-.764L7.021 4.128A.858.858 0 0 0 6.572 4z"/></svg>12343</span>
+                            <span><img src="/public/heart.svg">1234</span>
+                            <span><img src="/public/comment.svg">345</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rooms">
+                <ul class="roomList">
+                </ul>
+            </div>
+            <div class="chat" style="display: none">
+                <h2 class="roomName"></h2>
+                <span class="userCount">현재 1명</span>
+                <div class="exitBtn">
+                    <svg class="exitBtnIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="#000" d="M6 2C3.79086 2 2 3.79086 2 6V9H4V6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V15H2V18C2 20.2091 3.79086 22 6 22H18C20.2091 22 22 20.2091 22 18V6C22 3.79086 20.2091 2 18 2H6Z"/><path fill="#000" d="M3 11C2.44772 11 2 11.4477 2 12C2 12.5523 2.44772 13 3 13H12.5825L10.0469 15.5355C9.6564 15.9261 9.6564 16.5592 10.0469 16.9498C10.4374 17.3403 11.0706 17.3403 11.4611 16.9498L15.6568 12.7541C15.8671 12.5707 16 12.3009 16 12C16 11.6991 15.8671 11.4293 15.6568 11.2459L11.4611 7.05025C11.0706 6.65972 10.4374 6.65972 10.0469 7.05025C9.6564 7.44077 9.6564 8.07394 10.0469 8.46446L12.5825 11H3Z"/></svg>
+                    나가기
+                </div>
+                <ul class="chatWindow"></ul>
+                <input class="chatInput" placeholder="채팅">
+            </div>
+        </main>
+    </div>
+
+    <!-- <script defer src="/public/search.js"></script> -->
+</body>
+</html>
